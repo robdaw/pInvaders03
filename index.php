@@ -10,7 +10,7 @@
   </head>
   <body ng-app="pInvApp" ng-controller="pInvAppCtrl">
     <div class="pure-g">
-        <div class="pure-u-1"><img src="img/pInvadersLogoF1.png" alt="Logo" class="logo"/></div>
+        <div class="pure-u-1"><img src="img/pInvadersLogoF2.png" alt="Logo" class="logo"/></div>
     </div>
     <div class="pure-g">
         <div class="pure-u-1-2">
@@ -46,7 +46,6 @@
                       <label for="fil">Fila</label>
                       <input id="fil" type="text" placeholder={{naveActualFila}} readonly>
                   </div>
-                  <button type="submit" class="pure-button pure-button-primary" ng-click="mueveNave()">Mueve la nave</button>
                 </fieldset>
               </form>
           </p>
