@@ -40,12 +40,13 @@
                 <legend>MOVER NAVE A POSICION</legend>
                   <div class="pure-control-group">
                       <label for="col">Columna</label>
-                      <input id="col" type="text" placeholder={{naveActualColumna}} readonly>
+                      <input id="col" type="text"  ng-model="naveActualColumna">
                   </div>
                   <div class="pure-control-group">
                       <label for="fil">Fila</label>
-                      <input id="fil" type="text" placeholder={{naveActualFila}} readonly>
+                      <input id="fil" type="text" ng-model="naveActualFila">
                   </div>
+                  <button type="submit" class="pure-button pure-button-primary" ng-click=mueveNavePosInput(naveActualFila,naveActualColumna)>Mueve la nave</button>
                 </fieldset>
               </form>
           </p>

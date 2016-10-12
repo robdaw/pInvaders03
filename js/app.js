@@ -12,6 +12,8 @@ app.controller("pInvAppCtrl", function($scope,$http) {
     //Posicion inicial de nave
     $scope.naveActualFila=3;
     $scope.naveActualColumna=3;
+    $scope.naveAnteriorFila=3;
+    $scope.naveAnteriorColumna=3;
     $scope.imgs[3][3].img="img/celdaNavePocketInvaders100.png";
     //Petición a mover nave
     $scope.posicion;
@@ -39,6 +41,20 @@ app.controller("pInvAppCtrl", function($scope,$http) {
             $scope.naveActualFila=$scope.posicion.fila;
             $scope.naveActualColumna=$scope.posicion.columna;
             $scope.imgs[$scope.posicion.fila][$scope.posicion.columna].img="img/celdaNavePocketInvaders100.png";
+            $scope.naveAnteriorFila=$scope.naveActualFila;
+            $scope.naveAnteriorColumna=$scope.naveActualColumna;
+        });
+    };
+    $scope.mueveNavePosInput = function($i,$j) {
+      $http.get("lib/app.php?fil="+$i+"&col="+$j)
+        .then(function(response) {
+            $scope.posicion = response.data;
+            $scope.imgs[$scope.naveAnteriorFila][$scope.naveAnteriorColumna].img="img/celdaPocketInvaders100.png";
+            $scope.naveActualFila=$scope.posicion.fila;
+            $scope.naveActualColumna=$scope.posicion.columna;
+            $scope.imgs[$scope.posicion.fila][$scope.posicion.columna].img="img/celdaNavePocketInvaders100.png";
+            $scope.naveAnteriorFila=$scope.naveActualFila;
+            $scope.naveAnteriorColumna=$scope.naveActualColumna;
         });
     };
 
