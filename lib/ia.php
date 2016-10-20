@@ -38,7 +38,7 @@ class ia
       if($fil>3 ){
          $this->fila = 3;
 
- }    elseif ($col<0) {
+ }    elseif ($fil<0) {
         $this->fila = 0;
 
  }    else{
